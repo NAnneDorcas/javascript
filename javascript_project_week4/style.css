@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url(../fonts/Nunito-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url(../fonts/Orbitron-Regular.ttf) format('truetype');
+}
+
+html {
+    box-sizing: border-box;
+}
+  
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif; 
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right,white );
+}
+
+/* Calculator frame */
+#calc__container {
+    background-color: black;
+    border: 2px solid rgb(46, 46, 47);
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    gap: 2px;
+    padding: 25px 8px;
+    box-shadow: 0px 8px 15px 5px rgba(71, 8, 77, 0.3);
+}
+
+/* Calculator Screen */
+#display__operation {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 100px;
+    font-family: 'Orbitron', sans-serif;
+    color: black;
+    margin: 15px 0 25px;
+    padding: 5px 8px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: gray;
+    border: 2px solid #101010;
+}
+
+.current-value {
+    font-size: 38px;
+}
+
+.previous-value {
+    font-size: 20px;
+}
+
+button {
+    margin: 1px;
+    border-radius: 5%;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* Number Buttons */
+.number {
+    background-color: lightseagreen;
+    color:black;
+}
+
+.number:hover {
+    background-color: lightgreen;
+    border: 2px solid lightseagreen;
+}
+
+/* Equal Button */
+.equals {
+    background-color: orange;
+    color: black;
+}
+
+.equals:hover {
+    background-color: lightsalmon;
+    border: 2px solid orange;
+}
+
+/* Operator Buttons */
+.operator {
+    background-color: orange;
+    color: black;
+}
+
+.operator:hover {
+    background-color: lightsalmon;
+    border: 2px solid orange;
+}
+
+/* All Clear, Change Number Sign and Percentage Button */
+.all__clear,
+.change__sign,
+.percentage {
+    background-color:blue;
+    color: black;
+}
+
+.all__clear:hover,
+.change__sign:hover,
+.percentage:hover {
+    background-color: lightblue;
+    border: 2px solid blue;
+}
+
+.decimal {
+    background-color: lightseagreen;
+    color: black;
+}
+.decimal:hover {
+    background-color: lightgreen;
+    border: 2px solid lightseagreen;
+}
+.number-zero:hover {
+    background-color:lightgreen;
+    border: 2px solid lightseagreen;
+}
+.number-zero {
+    grid-column: 1/3;
+    color: black;
+    background-color: lightseagreen;
+}
+
+/* Media Query */
+@media only screen and (max-width: 450px) {
+    #calc__container {
+        display: grid;
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows: minmax(80px, auto) repeat(5, 60px);
+    }
+    .current-value {
+        font-size: 30px;
+    }
+    .previous-value {
+        font-size: 16px;
+    }
+    button {
+        font-size: 25px;
+    }
+}
